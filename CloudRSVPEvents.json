@@ -1,0 +1,65 @@
+{
+    "Items": [
+        {
+            "date": {
+                "S": "2026-07-08"
+            },
+            "max_participants": {
+                "S": "50"
+            },
+            "banner_url": {
+                "S": "https://cloud-rsvp-images-24bce11479.s3.us-east-1.amazonaws.com/event-banners/f2dbed3a-f423-4561-9acb-a95816c774a1_banner1.jpeg"
+            },
+            "created_by": {
+                "S": "organizer@test.com"
+            },
+            "event_id": {
+                "S": "58a18ede-044e-4fd7-94b9-3292414da805"
+            },
+            "time": {
+                "S": "16:40"
+            },
+            "description": {
+                "S": "Have fun!"
+            },
+            "venue": {
+                "S": "Convention Centre, Indore"
+            },
+            "event_name": {
+                "S": "AWS Community Summit"
+            }
+        },
+        {
+            "date": {
+                "S": "2026-07-04"
+            },
+            "max_participants": {
+                "S": "30"
+            },
+            "banner_url": {
+                "S": "https://cloud-rsvp-images-24bce11479.s3.us-east-1.amazonaws.com/event-banners/13730b6b-9c83-4689-9965-0846336bf833_banner1.jpeg"
+            },
+            "created_by": {
+                "S": "organizer@test.com"
+            },
+            "event_id": {
+                "S": "9dea498b-23f9-4c64-ad2c-1d87755787a9"
+            },
+            "time": {
+                "S": "23:43"
+            },
+            "description": {
+                "S": "Have a lot of fun!"
+            },
+            "venue": {
+                "S": "Convention Centre, Bhopal"
+            },
+            "event_name": {
+                "S": "AWS Community Summit 2"
+            }
+        }
+    ],
+    "Count": 2,
+    "ScannedCount": 2,
+    "ConsumedCapacity": null
+}

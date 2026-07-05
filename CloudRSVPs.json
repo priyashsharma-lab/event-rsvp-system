@@ -1,0 +1,76 @@
+{
+    "Items": [
+        {
+            "created_at": {
+                "S": "2026-07-05 09:18:35"
+            },
+            "user_email": {
+                "S": "attendee@test.com"
+            },
+            "rsvp_id": {
+                "S": "5068915a-2b9f-43d8-9f08-4eff793d9098"
+            },
+            "organizer_email": {
+                "S": "organizer@test.com"
+            },
+            "status": {
+                "S": "Accepted"
+            },
+            "event_id": {
+                "S": "9dea498b-23f9-4c64-ad2c-1d87755787a9"
+            },
+            "event_name": {
+                "S": "AWS Community Summit 2"
+            }
+        },
+        {
+            "created_at": {
+                "S": "2026-07-05 11:52:44"
+            },
+            "user_email": {
+                "S": "test1@test.com"
+            },
+            "rsvp_id": {
+                "S": "31403290-9964-4ddf-93ef-7f98113ef507"
+            },
+            "organizer_email": {
+                "S": "organizer@test.com"
+            },
+            "status": {
+                "S": "Accepted"
+            },
+            "event_id": {
+                "S": "9dea498b-23f9-4c64-ad2c-1d87755787a9"
+            },
+            "event_name": {
+                "S": "AWS Community Summit 2"
+            }
+        },
+        {
+            "created_at": {
+                "S": "2026-07-05 09:12:00"
+            },
+            "user_email": {
+                "S": "test1@test.com"
+            },
+            "rsvp_id": {
+                "S": "8b80566c-d651-40ca-a9ac-dee808ac4051"
+            },
+            "organizer_email": {
+                "S": "organizer@test.com"
+            },
+            "status": {
+                "S": "Accepted"
+            },
+            "event_id": {
+                "S": "58a18ede-044e-4fd7-94b9-3292414da805"
+            },
+            "event_name": {
+                "S": "AWS Community Summit"
+            }
+        }
+    ],
+    "Count": 3,
+    "ScannedCount": 3,
+    "ConsumedCapacity": null
+}

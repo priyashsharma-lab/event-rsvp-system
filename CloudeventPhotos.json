@@ -1,0 +1,27 @@
+{
+    "Items": [
+        {
+            "uploaded_at": {
+                "S": "2026-07-05 09:19:33"
+            },
+            "event_id": {
+                "S": "9dea498b-23f9-4c64-ad2c-1d87755787a9"
+            },
+            "photo_id": {
+                "S": "186397a1-3c43-44b5-b1d7-cdbb48ff9986"
+            },
+            "photo_url": {
+                "S": "https://cloud-rsvp-images-24bce11479.s3.us-east-1.amazonaws.com/event-photos/96e5f213-0b9c-4124-b0a3-825549e404dd_banner2.jpeg"
+            },
+            "uploaded_by": {
+                "S": "attendee@test.com"
+            },
+            "event_name": {
+                "S": "AWS Community Summit 2"
+            }
+        }
+    ],
+    "Count": 1,
+    "ScannedCount": 1,
+    "ConsumedCapacity": null
+}
