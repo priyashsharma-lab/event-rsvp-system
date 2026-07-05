@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="eyebrow text-aws">
+                Invitations
+            </span>
+
+            <h1>
+                My Invitations
+            </h1>
+
+        </div>
+
+        {% if invitations %}
+
+        <table class="table table-bordered">
+
+            <thead>
+
+                <tr>
+
+                    <th>Event</th>
+
+                    <th>Organizer</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for invite in invitations %}
+
+                <tr>
+
+                    <td>{{ invite.event_name }}</td>
+
+                    <td>{{ invite.organizer_email }}</td>
+
+                    <td>{{ invite.status }}</td>
+
+                    <td>
+
+                        {% if invite.status == "Pending" %}
+
+                        <a href="{{ url_for('accept_invitation',
+                                            invite_id=invite.invite_id) }}"
+                           class="btn btn-success btn-sm">
+
+                            Accept
+
+                        </a>
+
+                        <a href="{{ url_for('reject_invitation',
+                                            invite_id=invite.invite_id) }}"
+                           class="btn btn-danger btn-sm">
+
+                            Reject
+
+                        </a>
+
+                        {% else %}
+
+                        {{ invite.status }}
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        {% else %}
+
+        <div class="alert alert-info">
+
+            No Invitations Found.
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

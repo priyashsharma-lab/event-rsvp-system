@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Event detail page -->
+<section class="details-hero">
+    <div class="container">
+        <div class="details-banner">
+            <div>
+                <span class="eyebrow">Featured Event</span>
+                <h1>AWS Builders Meetup</h1>
+                <p>Hands-on architecture sessions for teams building secure, scalable cloud event platforms.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad pt-0">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="content-panel">
+                    <h2>Event Description</h2>
+                    <p>Join cloud practitioners for a professional event focused on RSVP workflows, identity readiness, event data storage, and secure media handling. This frontend is intentionally prepared for future Cognito, DynamoDB, and S3 integration.</p>
+                    <p>Attendees will meet organizers, review event architecture patterns, and participate in guided sessions built around AWS-first operational thinking.</p>
+                    <div class="details-actions">
+                        <button type="button" class="btn btn-aws"><i class="bi bi-check2-circle"></i>Accept RSVP</button>
+                        <button type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle"></i>Reject RSVP</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="content-panel details-list">
+                    <div><i class="bi bi-geo-alt"></i><span><strong>Venue</strong>Hyderabad Innovation Hub</span></div>
+                    <div><i class="bi bi-calendar2"></i><span><strong>Date</strong>Jul 18, 2026</span></div>
+                    <div><i class="bi bi-person-badge"></i><span><strong>Organizer</strong>Cloud RSVP Team</span></div>
+                    <div><i class="bi bi-hash"></i><span><strong>Event ID</strong>{{ event_id }}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

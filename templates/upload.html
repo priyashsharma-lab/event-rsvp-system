@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Upload page -->
+<section class="form-section">
+    <div class="container">
+        <div class="form-card">
+            <div class="form-title">
+                <span class="eyebrow text-aws">Upload Photos</span>
+                <h1>Preview event media</h1>
+            </div>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label class="dropzone" for="photoUpload" id="dropzone">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                    <span>Drag and drop photos here</span>
+                    <small>or select files for future Amazon S3 upload</small>
+                    <input type="file" id="photoUpload" name="photos" accept="image/*" multiple>
+                </label>
+                <div id="previewGrid" class="preview-grid" aria-live="polite"></div>
+                <button type="button" class="btn btn-aws mt-4"><i class="bi bi-upload"></i>Upload Placeholder</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

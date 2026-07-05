@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Dashboard Layout -->
+
+<section class="dashboard-shell">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-title">
+            Workspace
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="active">
+            <i class="bi bi-grid-1x2"></i>
+            Dashboard
+        </a>
+
+        <a href="{{ url_for('create_event') }}">
+            <i class="bi bi-calendar-plus"></i>
+            Create Event
+        </a>
+
+        <a href="{{ url_for('events') }}">
+            <i class="bi bi-calendar-event"></i>
+            View Events
+        </a>
+
+        <a href="{{ url_for('my_rsvps') }}">
+            <i class="bi bi-person-check"></i>
+            My RSVPs
+        </a>
+
+        <a href="{{ url_for('profile') }}">
+            <i class="bi bi-person-circle"></i>
+            Profile
+        </a>
+
+        <a href="{{ url_for('logout') }}">
+            <i class="bi bi-box-arrow-right"></i>
+            Logout
+        </a>
+
+<a href="{{ url_for('my_invitations') }}">
+    <i class="bi bi-envelope-paper"></i>
+    My Invitations
+</a>
+
+<a href="{{ url_for('upload_event_photo') }}">
+    <i class="bi bi-images"></i>
+    Upload Event Photos
+</a>
+
+<a href="{{ url_for('view_event_photos') }}">
+    <i class="bi bi-images"></i>
+    View Event Photos
+</a>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <div class="dashboard-content">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <span class="eyebrow text-aws">
+                    Operations
+                </span>
+
+                <h1>
+                    Cloud RSVP Dashboard
+                </h1>
+
+            </div>
+
+            <a class="btn btn-aws"
+               href="{{ url_for('create_event') }}">
+
+                <i class="bi bi-plus-lg"></i>
+
+                Create Event
+
+            </a>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Create Event -->
+
+            <div class="col-md-6 col-xl-4">
+
+                <a class="dashboard-card"
+                   href="{{ url_for('create_event') }}">
+
+                    <i class="bi bi-calendar-plus"></i>
+
+                    <span>Create Event</span>
+
+                    <small>
+                        Launch a new event registration page.
+                    </small>
+
+                </a>
+
+            </div>
+
+            <!-- View Events -->
+
+            <div class="col-md-6 col-xl-4">
+
+                <a class="dashboard-card"
+                   href="{{ url_for('events') }}">
+
+                    <i class="bi bi-calendar-event"></i>
+
+                    <span>View Events</span>
+
+                    <small>
+                        Browse all available events.
+                    </small>
+
+                </a>
+
+            </div>
+	    <!--Invitations -->
+            
+            <div class="col-md-6 col-xl-4">
+
+    <a class="dashboard-card"
+       href="{{ url_for('my_invitations') }}">
+
+        <i class="bi bi-envelope-paper"></i>
+
+        <span>My Invitations</span>
+
+        <small>
+            View invitations sent by organizers.
+        </small>
+
+    </a>
+
+</div>
+	<!--Upload event photos-->
+
+<div class="col-md-6 col-xl-4">
+
+    <a class="dashboard-card"
+       href="{{ url_for('upload_event_photo') }}">
+
+        <i class="bi bi-images"></i>
+
+        <span>Upload Event Photos</span>
+
+        <small>
+
+            Upload event memories to Amazon S3.
+
+        </small>
+
+    </a>
+
+</div>    
+	<!-- view event photos -->
+
+<div class="col-md-6 col-xl-4">
+
+    <a class="dashboard-card"
+       href="{{ url_for('view_event_photos') }}">
+
+        <i class="bi bi-images"></i>
+
+        <span>View Event Photos</span>
+
+        <small>
+
+            Browse photos uploaded by attendees.
+
+        </small>
+
+    </a>
+
+</div>
+
+
+            <!-- My RSVPs -->
+
+            <div class="col-md-6 col-xl-4">
+
+                <a class="dashboard-card"
+                   href="{{ url_for('my_rsvps') }}">
+
+                    <i class="bi bi-person-check"></i>
+
+                    <span>My RSVPs</span>
+
+                    <small>
+                        View all your RSVP requests and their status.
+                    </small>
+
+                </a>
+
+            </div>
+
+            <!-- Profile -->
+
+            <div class="col-md-6 col-xl-4">
+
+                <a class="dashboard-card"
+                   href="{{ url_for('profile') }}">
+
+                    <i class="bi bi-person-circle"></i>
+
+                    <span>Profile</span>
+
+                    <small>
+                        Manage your account information.
+                    </small>
+
+                </a>
+
+            </div>
+
+            <!-- Logout -->
+
+            <div class="col-md-6 col-xl-4">
+
+                <a class="dashboard-card danger"
+                   href="{{ url_for('logout') }}">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    <span>Logout</span>
+
+                    <small>
+                        Sign out of the application.
+                    </small>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

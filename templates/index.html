@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7 hero-copy">
+                <span class="eyebrow"><i class="bi bi-lightning-charge-fill"></i>AWS-ready RSVP platform</span>
+                <h1>Cloud Event RSVP Management System</h1>
+                <p class="hero-subtitle">Secure Event Registration powered by AWS Cloud</p>
+                <div class="hero-actions">
+                    <a href="{{ url_for('login') }}" class="btn btn-aws btn-lg">
+                        <i class="bi bi-box-arrow-in-right"></i>Login
+                    </a>
+                    <a href="{{ url_for('register') }}" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-person-plus"></i>Register
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="hero-panel">
+                    <div class="event-preview">
+                        <div class="event-preview-header">
+                            <span>Upcoming Cloud Summit</span>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                        <div class="event-preview-body">
+                            <div class="metric-card">
+                                <small>Accepted RSVPs</small>
+                                <strong>348</strong>
+                            </div>
+                            <div class="metric-card">
+                                <small>Capacity</small>
+                                <strong>500</strong>
+                            </div>
+                            <div class="metric-card">
+                                <small>Photos</small>
+                                <strong>124</strong>
+                            </div>
+                        </div>
+                        <div class="cloud-progress">
+                            <span style="width: 72%"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features section -->
+<section class="section-pad">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow text-aws">Features</span>
+            <h2>Built for professional cloud event operations</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-card">
+                    <i class="bi bi-calendar2-check"></i>
+                    <h3>Event Creation</h3>
+                    <p>Create event pages with capacity limits, dates, venues, descriptions, and banner images.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-card">
+                    <i class="bi bi-person-check"></i>
+                    <h3>RSVP Tracking</h3>
+                    <p>Prepare attendance workflows for accept and reject responses across multiple events.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-card">
+                    <i class="bi bi-images"></i>
+                    <h3>Photo Uploads</h3>
+                    <p>Drag, drop, and preview event photos before future Amazon S3 storage integration.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-card">
+                    <i class="bi bi-shield-lock"></i>
+                    <h3>Secure Identity</h3>
+                    <p>Authentication screens are ready for future Amazon Cognito sign-in and registration flows.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services section -->
+<section class="services-band">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="eyebrow text-aws">Services Used</span>
+            <h2>AWS integration targets</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card"><i class="bi bi-cpu"></i><span>Amazon EC2</span></div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card"><i class="bi bi-shield-lock"></i><span>Amazon Cognito</span></div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card"><i class="bi bi-database"></i><span>Amazon DynamoDB</span></div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card"><i class="bi bi-archive"></i><span>Amazon S3</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

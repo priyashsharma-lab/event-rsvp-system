@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="auth-section">
+
+    <div class="container">
+
+        <div class="auth-card mx-auto wide">
+
+            <div class="auth-header">
+
+                <i class="bi bi-person-plus-fill"></i>
+
+                <h1>Create Account</h1>
+
+                <p>Register to use the Cloud RSVP Event Management System.</p>
+
+            </div>
+
+            <form method="POST">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="first_name"
+                            placeholder="John"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="last_name"
+                            placeholder="Doe"
+                            required>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label class="form-label">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                            autocomplete="email">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            placeholder="Enter Password"
+                            required
+                            autocomplete="new-password">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="confirm_password"
+                            placeholder="Confirm Password"
+                            required
+                            autocomplete="new-password">
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-aws w-100 mt-4">
+
+                    <i class="bi bi-person-plus me-2"></i>
+
+                    Register
+
+                </button>
+
+                <div class="text-center mt-4">
+
+                    <p>
+
+                        Already have an account?
+
+                        <a href="{{ url_for('login') }}">
+                            Login
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

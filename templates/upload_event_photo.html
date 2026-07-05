@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="card shadow-lg border-0">
+
+                    <div class="card-body p-5">
+
+                        <div class="text-center mb-4">
+
+                            <span class="eyebrow text-aws">
+                                Amazon S3
+                            </span>
+
+                            <h2>
+                                Upload Event Photos
+                            </h2>
+
+                            <p class="text-muted">
+                                Select an event and upload photos after the event.
+                            </p>
+
+                        </div>
+
+                        <form
+                            method="POST"
+                            enctype="multipart/form-data">
+
+                            <!-- Select Event -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+
+                                    Select Event
+
+                                </label>
+
+                                <select
+                                    name="event_id"
+                                    class="form-select"
+                                    required>
+
+                                    <option value="">
+
+                                        -- Select Event --
+
+                                    </option>
+
+                                    {% for event in events %}
+
+                                    <option value="{{ event.event_id }}">
+
+                                        {{ event.event_name }}
+
+                                    </option>
+
+                                    {% endfor %}
+
+                                </select>
+
+                            </div>
+
+                            <!-- Upload Image -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+
+                                    Choose Photo
+
+                                </label>
+
+                                <input
+                                    type="file"
+                                    name="photo"
+                                    class="form-control"
+                                    accept="image/*"
+                                    required>
+
+                            </div>
+
+                            <!-- Submit -->
+
+                            <div class="d-grid">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-aws btn-lg">
+
+                                    <i class="bi bi-cloud-upload-fill"></i>
+
+                                    Upload Photo
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

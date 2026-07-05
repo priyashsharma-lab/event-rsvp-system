@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow text-aws">Events</span>
+            <h1>Upcoming Cloud Events</h1>
+            <p>Events stored in Amazon DynamoDB.</p>
+        </div>
+
+        {% if events %}
+
+        <div class="row g-4">
+
+            {% for event in events %}
+
+            <div class="col-md-6 col-xl-4">
+
+                <div class="event-card">
+
+                    <!-- Event Banner -->
+
+                    {% if event.banner_url %}
+
+                    <div class="event-image">
+
+                        <img
+                            src="{{ event.banner_url }}"
+                            alt="{{ event.event_name }}"
+                            style="width:100%;
+                                   height:220px;
+                                   object-fit:cover;
+                                   border-radius:12px 12px 0 0;">
+
+                    </div>
+
+                    {% else %}
+
+                    <div class="event-image"
+                         style="background:linear-gradient(135deg,#232F3E,#FF9900);
+                                height:220px;
+                                display:flex;
+                                justify-content:center;
+                                align-items:center;">
+
+                        <i class="bi bi-calendar-event"
+                           style="font-size:60px;color:white;"></i>
+
+                    </div>
+
+                    {% endif %}
+
+                    <div class="event-body">
+
+                        <h2>{{ event.event_name }}</h2>
+
+                        <p class="event-meta">
+                            <i class="bi bi-calendar2 me-2"></i>
+                            {{ event.date }}
+                        </p>
+
+                        <p class="event-meta">
+                            <i class="bi bi-clock me-2"></i>
+                            {{ event.time }}
+                        </p>
+
+                        <p class="event-meta">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            {{ event.venue }}
+                        </p>
+
+                        <p>
+                            {{ event.description }}
+                        </p>
+
+                        <p>
+                            <strong>Maximum Participants:</strong>
+                            {{ event.max_participants }}
+                        </p>
+
+                        <div class="d-flex gap-2 mb-3">
+
+                            <a
+                                href="{{ url_for('event_details', event_id=loop.index) }}"
+                                class="btn btn-dark-navy btn-sm">
+
+                                View Details
+
+                            </a>
+
+                            <a
+                                href="{{ url_for('rsvp', event_id=event.event_id) }}"
+                                class="btn btn-aws btn-sm">
+
+                                RSVP
+
+                            </a>
+
+                        </div>
+
+                        <!-- Organizer Only -->
+
+                        {% if session["user"] == event.created_by %}
+
+                        <hr>
+
+                        <h6 class="mb-2">
+                            Send Invitation
+                        </h6>
+
+                        <form
+                            action="{{ url_for('send_invite', event_id=event.event_id) }}"
+                            method="POST">
+
+                            <div class="mb-2">
+
+                                <input
+                                    type="email"
+                                    name="invitee_email"
+                                    class="form-control"
+                                    placeholder="Enter registered user's email"
+                                    required>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary btn-sm w-100">
+
+                                <i class="bi bi-envelope-fill"></i>
+
+                                Send Invitation
+
+                            </button>
+
+                        </form>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-info text-center">
+
+            <h4>No Events Found</h4>
+
+            <p>No events have been created yet.</p>
+
+            <a
+                href="{{ url_for('create_event') }}"
+                class="btn btn-aws">
+
+                Create Your First Event
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

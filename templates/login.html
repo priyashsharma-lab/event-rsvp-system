@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="auth-section">
+
+    <div class="container">
+
+        <div class="auth-card mx-auto">
+
+            <div class="auth-header">
+
+                <i class="bi bi-shield-lock-fill"></i>
+
+                <h1>Welcome Back</h1>
+
+                <p>Login to access your Cloud RSVP Dashboard.</p>
+
+            </div>
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                        autocomplete="email">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password">
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-aws w-100 mb-3">
+
+                    <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                    Login
+
+                </button>
+
+                <div class="text-center">
+
+                    <p class="mb-2">
+
+                        Don't have an account?
+
+                        <a href="{{ url_for('register') }}">
+                            Register
+                        </a>
+
+                    </p>
+
+                    <a href="#" class="text-decoration-none">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

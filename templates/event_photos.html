@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="eyebrow text-aws">
+                Event Gallery
+            </span>
+
+            <h1>
+                Event Photos
+            </h1>
+
+            <p>
+                Photos uploaded by attendees after the event.
+            </p>
+
+        </div>
+
+        {% if photos %}
+
+        <div class="row g-4">
+
+            {% for photo in photos %}
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow h-100">
+
+                    <img
+                        src="{{ photo.photo_url }}"
+                        class="card-img-top"
+                        style="height:250px; object-fit:cover;"
+                        alt="Event Photo">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            {{ photo.event_name }}
+
+                        </h5>
+
+                        <p class="mb-1">
+
+                            <strong>Uploaded By:</strong><br>
+
+                            {{ photo.uploaded_by }}
+
+                        </p>
+
+                        <p class="mb-0">
+
+                            <strong>Uploaded At:</strong><br>
+
+                            {{ photo.uploaded_at }}
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-info text-center">
+
+            <h4>No Photos Uploaded Yet</h4>
+
+            <p>
+
+                Upload the first event photo.
+
+            </p>
+
+            <a
+                href="{{ url_for('upload_event_photo') }}"
+                class="btn btn-aws">
+
+                Upload Photo
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="eyebrow text-aws">
+                RSVP Management
+            </span>
+
+            <h1>
+                My RSVP Requests
+            </h1>
+
+            <p>
+                View and manage all RSVP requests.
+            </p>
+
+        </div>
+
+        {% if rsvps %}
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-hover align-middle">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>Event</th>
+
+                        <th>User</th>
+
+                        <th>Status</th>
+
+                        <th>Requested On</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for rsvp in rsvps %}
+
+                    <tr>
+
+                        <td>{{ rsvp.event_name }}</td>
+
+                        <td>{{ rsvp.user_email }}</td>
+
+                        <td>
+
+                            {% if rsvp.status == "Pending" %}
+
+                            <span class="badge bg-warning text-dark">
+                                Pending
+                            </span>
+
+                            {% elif rsvp.status == "Accepted" %}
+
+                            <span class="badge bg-success">
+                                Accepted
+                            </span>
+
+                            {% else %}
+
+                            <span class="badge bg-danger">
+                                Rejected
+                            </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>{{ rsvp.created_at }}</td>
+
+                        <td>
+{% if rsvp.organizer_email == current_user %}
+
+    {% if rsvp.status == "Pending" %}
+
+        <a href="{{ url_for('accept_rsvp', rsvp_id=rsvp.rsvp_id) }}"
+           class="btn btn-success btn-sm">
+            Accept
+        </a>
+
+        <a href="{{ url_for('reject_rsvp', rsvp_id=rsvp.rsvp_id) }}"
+           class="btn btn-danger btn-sm">
+            Reject
+        </a>
+
+    {% else %}
+
+        <span class="text-muted">
+            Decision Taken
+        </span>
+
+    {% endif %}
+
+{% else %}
+
+    <span class="text-muted">
+        Waiting for Organizer
+    </span>
+
+{% endif %}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-info text-center">
+
+            <h4>No RSVP Requests</h4>
+
+            <p>
+                Nobody has RSVP'd for any event yet.
+            </p>
+
+            <a href="{{ url_for('events') }}"
+               class="btn btn-aws">
+
+                View Events
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
